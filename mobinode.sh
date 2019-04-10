@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.mobinode'
 COIN_DAEMON='mobinoded'
 COIN_CLI='mobinode-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/MOBInodecoin/Mobinode/files/2871906/Mobinode-Ubuntu_Daemon-16.04.tar.gz'
+COIN_TGZ='https://github.com/MOBInodecoin/Mobinode/releases/download/v1.0.0.1/Mobinode-1.0.0.1-daemon_ubuntu_16.04.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='mobinode'
 COIN_PORT=12219
@@ -47,7 +47,7 @@ function download_node() {
   echo -e "${GREEN}Downloading and Installing VPS $COIN_NAME Daemon${NC}"
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
-  tar xzvf Mobinode-Ubuntu_Daemon-16.04.tar.gz
+  tar xzvf Mobinode-1.0.0.1-daemon_ubuntu_16.04.tar.gz
   cd rev >/dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
